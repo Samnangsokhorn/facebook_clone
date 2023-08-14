@@ -1,17 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_learning/FacebookClone/model/like_model.dart';
-import 'package:firebase_learning/FacebookClone/model/post_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class FacebookHomepage extends StatefulWidget {
-  const FacebookHomepage({super.key});
+import '../model/like_model.dart';
+import '../model/post_model.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<FacebookHomepage> createState() => _FacebookHomepageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _FacebookHomepageState extends State<FacebookHomepage> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +72,7 @@ class _FacebookHomepageState extends State<FacebookHomepage> {
                     .toList();
                 return Column(
                   children: List.generate(snapshot.data!.docs.length,
-                      (index) => _buildAllPost(post[index])),
+                      (index) => snapshot.data!.docs.isNotEmpty ? _buildAllPost(post[index]) : const SizedBox()),
                 );
               },
             )
