@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_learning/model/like_model.dart';
+import 'package:firebase_learning/models/like_model.dart';
 
 class PostModel {
   String? id;

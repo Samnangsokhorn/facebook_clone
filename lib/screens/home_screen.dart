@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../model/like_model.dart';
-import '../model/post_model.dart';
+import '../models/like_model.dart';
+import '../models/post_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
